@@ -1,0 +1,1 @@
+Ejemplo de integración de uso de Hibernate integrado con Spring.
