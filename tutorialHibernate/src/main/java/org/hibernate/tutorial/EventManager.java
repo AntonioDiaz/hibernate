@@ -1,5 +1,11 @@
 package org.hibernate.tutorial;
 
+/**
+ * mvn exec:java -Dexec.mainClass="org.hibernate.tutorial.EventManager" -Dexec.args="store"
+ * arranca la bbdd:
+ * mvn exec:java -Dexec.mainClass="org.hsqldb.Server" -Dexec.args="-database.0 file:target/data/tutorial"
+ */
+
 import org.hibernate.Session;
 
 import java.util.*;
@@ -13,6 +19,12 @@ public class EventManager {
 		EventManager mgr = new EventManager();
 		if (args[0].equals("store")) {
 			mgr.createAndStoreEvent("My Event", new Date());
+		} else if (args[0].equals("list")) {
+            List<Event> events = mgr.listEvents();
+            for (int i = 0; i < events.size(); i++) {
+                Event theEvent = (Event) events.get(i);
+                System.out.println("******Event: " + theEvent.getTitle() + " Time: " + theEvent.getDate());
+            }
 		}
 		HibernateUtil.getSessionFactory().close();
 	}
@@ -26,5 +38,14 @@ public class EventManager {
 		session.save(theEvent);
 		session.getTransaction().commit();
 	}
+	
+    private List<Event> listEvents() {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        @SuppressWarnings("unchecked")
+		List<Event> result = session.createQuery("from Event").list();
+        session.getTransaction().commit();
+        return result;
+    }
 
 }

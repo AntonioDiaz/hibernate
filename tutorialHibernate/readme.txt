@@ -24,3 +24,8 @@ Parte 3: La aplicación web eventmanager
 
 
 Resumen
+
+- Arranca la bbdd:
+mvn exec:java -Dexec.mainClass="org.hsqldb.Server" -Dexec.args="-database.0 file:target/data/tutorial"
+- Ejecutar:
+mvn exec:java -Dexec.mainClass="org.hibernate.tutorial.EventManager" -Dexec.args="store"
