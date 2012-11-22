@@ -1,5 +1,8 @@
 package org.hibernate.tutorial.domain;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Person {
 
 	public Person() {}
@@ -8,6 +11,7 @@ public class Person {
 	private int age;
 	private String firstname;
 	private String lastname;
+	private Set<Event> events = new HashSet<Event>();
 	
 	public Long getId() {
 		return id;
@@ -32,6 +36,12 @@ public class Person {
 	}
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
+	}
+	public Set<Event> getEvents() {
+		return events;
+	}
+	public void setEvents(Set<Event> events) {
+		this.events = events;
 	}
 
 }
