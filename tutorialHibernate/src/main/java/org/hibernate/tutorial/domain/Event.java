@@ -2,6 +2,9 @@ package org.hibernate.tutorial.domain;
 
 import java.util.Date;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
+
 public class Event {
 	private Long id;
 
@@ -34,5 +37,10 @@ public class Event {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
 	}
 }

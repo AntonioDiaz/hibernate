@@ -3,6 +3,8 @@ package org.hibernate.tutorial.domain;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 public class Person {
 
 	public Person() {}
@@ -42,6 +44,11 @@ public class Person {
 	}
 	public void setEvents(Set<Event> events) {
 		this.events = events;
+	}
+
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
 	}
 
 }

@@ -3,8 +3,8 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>tutoHibernate</groupId>
-	<artifactId>tutoHibernate</artifactId>
+	<groupId>tutorialHibernate</groupId>
+	<artifactId>tutorialHibernate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
 		<org.slf4j.version>1.6.1</org.slf4j.version>
@@ -62,6 +62,10 @@
 			<artifactId>hsqldb</artifactId>
 			<version>1.8.0.7</version>
 		</dependency>
-
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.2</version>
+		</dependency>
 	</dependencies>
 </project>
