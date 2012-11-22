@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping package="org.hibernate.tutorial.domain">
+	<class name="Person" table="PERSON">
+		<id name="id" column="PERSON_ID">
+			<generator class="native" />
+		</id>
+		<property name="age" />
+		<property name="firstname" />
+		<property name="lastname" />
+	</class>
+</hibernate-mapping>
