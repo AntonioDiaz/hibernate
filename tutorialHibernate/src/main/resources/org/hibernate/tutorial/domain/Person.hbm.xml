@@ -10,7 +10,7 @@
 		<property name="age" />
 		<property name="firstname" />
 		<property name="lastname" />
-		<set name="events" table="PERSON_EVENT" lazy="false">
+		<set name="events" table="PERSON_EVENT" lazy="false" inverse="true">
 			<key column="PERSON_ID" />
 			<many-to-many column="EVENT_ID" class="Event" />
 		</set>
