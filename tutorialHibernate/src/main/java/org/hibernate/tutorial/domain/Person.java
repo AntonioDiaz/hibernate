@@ -14,6 +14,7 @@ public class Person {
 	private String firstname;
 	private String lastname;
 	private Set<Event> events = new HashSet<Event>();
+	private Set<String> emailAddresses = new HashSet<String>();
 	
 	public Long getId() {
 		return id;
@@ -46,9 +47,16 @@ public class Person {
 		this.events = events;
 	}
 
+	public Set<String> getEmailAddresses() {
+		return emailAddresses;
+	}
+
+	public void setEmailAddresses(Set<String> emailAddresses) {
+		this.emailAddresses = emailAddresses;
+	}
+
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
 	}
-
 }
